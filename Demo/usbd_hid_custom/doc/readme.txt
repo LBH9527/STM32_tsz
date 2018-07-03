@@ -1,0 +1,1 @@
+因为探索者STM32F407开发板没有用到VUSB电压检测，所以要在usb_conf.h里面，将宏定义：#define VBUS_SENSING_ENABLED，屏蔽掉。

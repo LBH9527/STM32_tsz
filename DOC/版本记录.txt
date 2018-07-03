@@ -1,0 +1,18 @@
+V1.00    
+  - 正式发布
+
+V1.01
+  - 新增《ametal_am824_core 用户手册 V1.00.pdf》，详细介绍了平台资源、软件包结构、工程配置、外设配置方法以及如何使用各个外设资源。
+  - 更新《AM824-Core快速入门手册》，更加详细的介绍了开发环境的搭建过程，并新增了J-Link调试工具的使用方法。
+  - 代码优化及bug修复
+    1. 删除了 .\ametal\common\include\am_gpio.h文件中的宏：AM_GPIO_OUTPUT；
+    2. 删除了例程函数（demo_lpc82x_hw_iap.c）内部存在多余的am_board_init()函数调用；
+    3. 删除了 .\ametal\common\include\am_uart.h文件中的am_uart_connect()函数；
+    4. 精简自动波特率例程(demo_lpc82x_hw_uart_autobaud.c)；
+    5. 其它不影响接口使用的代码优化；
+    6. 不影响使用的注释优化。
+	
+V1.02
+  - 修改多处注释错误；
+  - 修改.\ametal\lpc82x\hw\include\amhw_lpc82x_gpio.h文件中的amhw_lpc82x_gpio_pin_dir_set()函数，解决无法通过该函数配置引脚方向的BUG；
+  - 修改每个工程的am_lpc82x_hwconfig_usart1.c和am_lpc82x_hwconfig_usart2.c文件中的平台初始化函数BUG，UART1引脚改为PIO0_8、PIO0_9以及UART2引脚改为PIO0_27、PIO0_28，解决UART1、UART2不可用的问题。
